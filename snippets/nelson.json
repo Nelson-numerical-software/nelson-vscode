@@ -1,0 +1,154 @@
+{
+  "warning": {
+    "prefix": "warning",
+    "body": "warning('${1:warning description}'${2:, ${3:A1}})",
+    "description": "Display warning message"
+  },
+  "error": {
+    "prefix": "error",
+    "body": "error('${1:error description}'${2:, ${3:A1}})",
+    "description": "Throw error and display message"
+  },
+  "disp": {
+    "prefix": "disp",
+    "body": "disp('${text}')",
+    "description": "Displays text"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case ${1:'${2:string}'}",
+      "\t$0"
+    ],
+    "description": "case statement"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch ${1:variable}",
+      "case ${2:'${3:string}'}",
+      "\t$0",
+      "end"
+    ],
+    "description": "switch ... case ... end"
+  },
+  "try": {
+    "prefix": "try",
+    "body": [
+      "try",
+      "\t$1",
+      "catch",
+      "\t$2",
+      "end"
+    ],
+    "description": "try ... catch ... end"
+  },
+  "else": {
+    "prefix": "else",
+    "body": [
+      "else",
+      "\t${body}"
+    ],
+    "description": "else statement"
+  },
+  "elseif": {
+    "prefix": "elseif",
+    "body": [
+      "elseif ${condition}",
+      "\t${body}"
+    ],
+    "description": "elseif statement"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for ${1:index} = ${2:1}${3::${4:n}}",
+      "\t$0",
+      "end"
+    ],
+    "description": "Execute statements specified number of times"
+  },
+  "while": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}",
+      "\t$2",
+      "end"
+    ],
+    "description": "Repeat execution of statements while condition is true."
+  },
+  "function": {
+    "prefix": "function",
+    "body": [
+      "function ${1:output} = ${2:myFun}(${3:input})",
+      "%$2 - ${4:Description}",
+      "%",
+      "% Syntax: $1 = $2($3)",
+      "%",
+      "% ${5:Long description}",
+      "\t$0",
+      "endfunction"
+    ],
+    "description": "Declare function name, inputs, and outputs"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t$2",
+      "end"
+    ],
+    "description": "if statement"
+  },
+  "if else": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}",
+      "\t$2",
+      "else",
+      "\t$3",
+      "end"
+    ],
+    "description": "if else statement"
+  },
+  "if elseif": {
+    "prefix": "ifelif",
+    "body": [
+      "if ${1:condition}",
+      "\t$2",
+      "elseif ${3:condition}",
+      "\t$4",
+      "else",
+      "\t $5",
+      "end"
+    ],
+    "description": "if elseif statement"
+  },
+  "get": {
+    "prefix": "get",
+    "body": "get(${1:handle}, '${2:propertyName}');",
+    "description": "Query handle object properties"
+  },
+  "set": {
+    "prefix": "set",
+    "body": "set(${1:get(${2:handle}, '${3:PropertyName}')}, '${4:PropertyName}', ${5:PropertyValue});",
+    "description": "Set handle object properties"
+  },
+  "properties":{
+    "prefix": "properties",
+    "body": ["properties (${PropertyAttributes})", 
+            "\t$0",
+          "end"]
+  },
+  "unix": {
+    "prefix": "unix",
+    "body": "[${1:status}, ${2:cmdout}] = unix('${3:command}');",
+    "description": "Shell command execution"
+  },
+  "system": {
+    "prefix": "system",
+    "body": "[${1:status}, ${2:cmdout}] = system('${3:command}');",
+    "description": "Shell command execution"
+  }
+
+}
