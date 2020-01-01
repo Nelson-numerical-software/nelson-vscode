@@ -18,7 +18,7 @@
     "prefix": "case",
     "body": [
       "case ${1:'${2:string}'}",
-      "\t$0"
+      "  $0"
     ],
     "description": "case statement"
   },
@@ -27,7 +27,7 @@
     "body": [
       "switch ${1:variable}",
       "case ${2:'${3:string}'}",
-      "\t$0",
+      "  $0",
       "end"
     ],
     "description": "switch ... case ... end"
@@ -36,9 +36,9 @@
     "prefix": "try",
     "body": [
       "try",
-      "\t$1",
+      "  $1",
       "catch",
-      "\t$2",
+      "  $2",
       "end"
     ],
     "description": "try ... catch ... end"
@@ -47,7 +47,7 @@
     "prefix": "else",
     "body": [
       "else",
-      "\t${body}"
+      "  ${body}"
     ],
     "description": "else statement"
   },
@@ -55,7 +55,7 @@
     "prefix": "elseif",
     "body": [
       "elseif ${condition}",
-      "\t${body}"
+      "  ${body}"
     ],
     "description": "elseif statement"
   },
@@ -63,7 +63,7 @@
     "prefix": "for",
     "body": [
       "for ${1:index} = ${2:1}${3::${4:n}}",
-      "\t$0",
+      "  $0",
       "end"
     ],
     "description": "Execute statements specified number of times"
@@ -72,7 +72,7 @@
     "prefix": "while",
     "body": [
       "while ${1:condition}",
-      "\t$2",
+      "  $2",
       "end"
     ],
     "description": "Repeat execution of statements while condition is true."
@@ -81,12 +81,12 @@
     "prefix": "function",
     "body": [
       "function ${1:output} = ${2:myFun}(${3:input})",
-      "%$2 - ${4:Description}",
-      "%",
-      "% Syntax: $1 = $2($3)",
-      "%",
-      "% ${5:Long description}",
-      "\t$0",
+      "// $2 - ${4:Description}",
+      "//",
+      "// Syntax: $1 = $2($3)",
+      "//",
+      "// ${5:Long description}",
+      "  $0",
       "endfunction"
     ],
     "description": "Declare function name, inputs, and outputs"
@@ -95,7 +95,7 @@
     "prefix": "if",
     "body": [
       "if ${1:condition}",
-      "\t$2",
+      "  $2",
       "end"
     ],
     "description": "if statement"
@@ -104,9 +104,9 @@
     "prefix": "ifelse",
     "body": [
       "if ${1:condition}",
-      "\t$2",
+      "  $2",
       "else",
-      "\t$3",
+      "  $3",
       "end"
     ],
     "description": "if else statement"
@@ -115,11 +115,11 @@
     "prefix": "ifelif",
     "body": [
       "if ${1:condition}",
-      "\t$2",
+      "  $2",
       "elseif ${3:condition}",
-      "\t$4",
+      "  $4",
       "else",
-      "\t $5",
+      "  $5",
       "end"
     ],
     "description": "if elseif statement"
@@ -137,7 +137,7 @@
   "properties":{
     "prefix": "properties",
     "body": ["properties (${PropertyAttributes})", 
-            "\t$0",
+            "  $0",
           "end"]
   },
   "unix": {
@@ -149,6 +149,62 @@
     "prefix": "system",
     "body": "[${1:status}, ${2:cmdout}] = system('${3:command}');",
     "description": "Shell command execution"
+  },  
+  "if else end": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}",
+      "  $2",
+      "else",
+      "  $3",
+      "end"
+    ],
+    "description": "if else statement"
+  },
+  "if end": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "$0",
+      "end"
+    ],
+    "description": "if statement"
+  },
+  "while end": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}",
+      "$0",
+      "end"
+    ],
+    "description": "Repeat execution of statements while condition is true"
+  },
+  "ones": {
+    "prefix": "ones",
+    "body": [
+      "ones(${1:rows}, ${2:cols})"
+    ],
+    "description": "Creates matrix of ones"
+  },
+  "eye": {
+    "prefix": "eye",
+    "body": [
+      "eye(${1:size}, ${2:$1})"
+    ],
+    "description": "identity matrix"
+  },
+  "zeros": {
+    "prefix": "zeros",
+    "body": [
+      "zeros(${1:rows}, ${2:cols})"
+    ],
+    "description": "Creates matrix of zeros"
+  },
+  "run": {
+    "prefix": "run",
+    "body": [
+      "run('${0:script.nls}')"
+    ],
+    "description": "run file"
   }
-
 }

@@ -1,7 +1,2 @@
-# Change Log
-
-
-## v0.1.0
-### Added
-- Syntax highlighting
-- Snippets
+## 1.0.0 (2020-01-01)
+* Initial public version

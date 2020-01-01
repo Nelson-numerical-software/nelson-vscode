@@ -2,18 +2,19 @@
     "name": "nelson",
     "displayName": "Nelson",
     "description": "Nelson support for Visual Studio Code",
-    "version": "0.1.0",
-    "publisher": "allan-cornet",
-    "license": "GPLv2.0",
+    "version": "1.0.0",
+    "publisher": "Nelson-numerical-software",
+    "license": "GPL-2.0",
     "engines": {
-        "vscode": "^1.21.0"
+        "vscode": "^1.30.0"
     },
     "categories": [
-        "Languages"
+        "Programming Languages",
+        "Snippets"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/Nelson-numerical-software/nelson-vscode.git"
+        "url": "https://github.com/Nelson-numerical-software/nelson-vscode"
     },
     "icon": "images/nelson.png",
     "bugs": "https://github.com/Nelson-numerical-software/nelson-vscode/issues",
@@ -26,8 +27,8 @@
                     "nelson"
                 ],
                 "extensions": [
-                    ".nls",
-                    ".nlf"
+                    ".nlf",
+                    ".nls"
                 ],
                 "configuration": "./language-configuration.json"
             }
