@@ -4,7 +4,7 @@
 		"increaseIndentPattern": "^\\s*\\b(function|if|else|elseif|case|otherwise|for|while|try|catch)\\b"
 	},
 	"comments": {
-		"lineComment": "//",
+		"lineComment": "%",
 	},
 	"brackets": [
 		["{", "}"],

@@ -11,7 +11,7 @@
   },
   "disp": {
     "prefix": "disp",
-    "body": "disp('${text}')",
+    "body": "disp('${1:text}')",
     "description": "Displays text"
   },
   "case": {
@@ -47,15 +47,15 @@
     "prefix": "else",
     "body": [
       "else",
-      "  ${body}"
+      "  ${1:body}"
     ],
     "description": "else statement"
   },
   "elseif": {
     "prefix": "elseif",
     "body": [
-      "elseif ${condition}",
-      "  ${body}"
+      "elseif ${1:condition}",
+      "  ${2:body}"
     ],
     "description": "elseif statement"
   },
@@ -81,11 +81,11 @@
     "prefix": "function",
     "body": [
       "function ${1:output} = ${2:myFun}(${3:input})",
-      "// $2 - ${4:Description}",
-      "//",
-      "// Syntax: $1 = $2($3)",
-      "//",
-      "// ${5:Long description}",
+      "% $2 - ${4:Description}",
+      "%",
+      "% Syntax: $1 = $2($3)",
+      "%",
+      "% ${5:Long description}",
       "  $0",
       "endfunction"
     ],
@@ -134,12 +134,6 @@
     "body": "set(${1:get(${2:handle}, '${3:PropertyName}')}, '${4:PropertyName}', ${5:PropertyValue});",
     "description": "Set handle object properties"
   },
-  "properties":{
-    "prefix": "properties",
-    "body": ["properties (${PropertyAttributes})", 
-            "  $0",
-          "end"]
-  },
   "unix": {
     "prefix": "unix",
     "body": "[${1:status}, ${2:cmdout}] = unix('${3:command}');",
@@ -149,7 +143,7 @@
     "prefix": "system",
     "body": "[${1:status}, ${2:cmdout}] = system('${3:command}');",
     "description": "Shell command execution"
-  },  
+  },
   "if else end": {
     "prefix": "ifelse",
     "body": [
